@@ -69,7 +69,6 @@ st.markdown("""
             font-weight: 400;
             line-height: 2.4;
             font-size: 24px;
-            width: 219%;
             border: 2px solid rgba(255, 210, 163, 1);
             }
               
