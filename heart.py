@@ -47,8 +47,6 @@ st.set_page_config(
     layout="wide"
 )
 
-
-
 st.markdown("""
 
     <style>
@@ -64,29 +62,7 @@ st.markdown("""
             color: #b9f7ff;    
         
         }
-            
-        .glass-box {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 20px;
-
-            padding: 25px;
-            margin-bottom: 20px;
-        }
-            
-        .blur-container {
-            background-color: rgba(255, 255, 255, 0.2); 
-            backdrop-filter: blur(10px);               
-            -webkit-backdrop-filter: blur(10px);       
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;}
-
-        
+                   
         .st-emotion-cache-1anq8dj {
             background-color: rgba(200, 170, 160, 0.4);
             color: rgba(200, 1, 17, 1);
@@ -96,18 +72,14 @@ st.markdown("""
             width: 219%;
             border: 2px solid rgba(255, 210, 163, 1);
             }
-        
-            
-           
+              
 }
 
     </style>
 
 """, unsafe_allow_html=True)
 
-
-heart_model = pickle.load(open('D:/JN/Practice/Heart/heart_risk_modal.sav', 'rb'))
-
+heart_model = pickle.load(open('heart_risk_modal.sav', 'rb'))
 
 col1, col2 = st.columns(2)
 with col1:
@@ -119,9 +91,6 @@ with col2:
     st.image("activity.svg", width=150)
 
 st.markdown("---")
-
-#st.html('<div class="blur-container">')
-#st.markdown('<div class="blur-container">', unsafe_allow_html=True)
 
 card1, card2 = st.columns(2)
 with card1:    
@@ -147,10 +116,6 @@ with card1:
             Chronic_Stress = st.selectbox("Chronic Stress", ["No", "Yes"], help="Experiencing ongoing stress for a long period of time.")
             Chronic_Stress = 1 if Chronic_Stress == "Yes" else 0
 
-#st.markdown('</div>', unsafe_allow_html=True)
-
-#st.markdown("---")
-
 with card2:
     with st.container(border=True):
         st.subheader("🛋️ Lifestyle")
@@ -168,7 +133,6 @@ with card2:
 
 st.markdown("---")
 
-
 card3, card4 = st.columns(2)
 with card3:
     with st.container(border=True):
@@ -184,8 +148,6 @@ with card3:
         with c2:
             High_Cholesterol = st.selectbox("High Cholesterol", ["No", "Yes"], help="Having elevated levels of cholesterol in the blood.")
             High_Cholesterol = 1 if High_Cholesterol == "Yes" else 0
-        
-#st.markdown("---")
 
 with card4:
     with st.container(border=True):
